@@ -32,4 +32,4 @@ NIST 800-53 · FedRAMP · CMMC · CIS Benchmarks · NIST 800-171
 
 ## Live Visual
 
-Interactive version deployed at: [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+Interactive version deployed at: https://ci-cd-pipeline-visual.vercel.app/
