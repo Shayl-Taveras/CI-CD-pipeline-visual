@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# CI/CD Pipeline Reference
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A living reference and interactive visual mapping every major CI/CD tool to its stage in the development cycle. Built from a GRC and compliance engineering perspective — plain-language descriptions, tool categories, and framework relevance for each tool.
 
-Currently, two official plugins are available:
+## What's In Here
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| File | Description |
+|------|-------------|
+| `CICD_Tools_Reference.md` | Full reference document organized by pipeline stage. Obsidian-ready. |
+| `cicd_visual.jsx` | Interactive React visual — click through each stage to explore the tools. Deployed via Vercel. |
 
-## React Compiler
+## The 8 Pipeline Stages Covered
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Stage | Focus |
+|-------|-------|
+| 01 — Plan & Code | Source control |
+| 02 — Build & Trigger | CI/CD orchestration |
+| 03 — Test & Scan | Security scanning and compliance gates |
+| 04 — Package & Store | Containerization and artifact management |
+| 05 — Provision Infrastructure | Infrastructure as code and configuration management |
+| 06 — Deploy & Orchestrate | Container orchestration and GitOps |
+| 07 — Secrets Management | Secure credential and token management |
+| 08 — Monitor & Observe | Metrics, logging, and continuous monitoring |
 
-## Expanding the ESLint configuration
+## Tools Covered
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Jenkins, GitHub Actions, GitLab CI, AWS CodePipeline, Tekton, Docker, Podman, Kubernetes, Helm, ArgoCD, Terraform, Pulumi, Ansible, Snyk, Trivy, Checkov, tfsec, SonarQube, OWASP Dependency-Check, OPA, Gatekeeper, Conftest, HashiCorp Vault, AWS Secrets Manager, JFrog Artifactory, Nexus, Packer, Prometheus, Grafana, Elastic Stack (ELK)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## GRC Frameworks Referenced
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+NIST 800-53 · FedRAMP · CMMC · CIS Benchmarks · NIST 800-171
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Live Visual
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Interactive version deployed at: [your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
